@@ -9,6 +9,9 @@
           : <%= link_to '', [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
         <% end %>
       </h4>
+      <small>
+        <%= distance_of_time_in_words(Time.now, item.created_at.to_date + 8 ) %> left <br>
+      </small>
     </div>
   </div>
 <% end %>
