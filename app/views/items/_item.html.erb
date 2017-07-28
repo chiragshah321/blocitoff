@@ -1,0 +1,11 @@
+<h2> Current To-Do Items </h2>
+
+<% @items.each do |item| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= item.name %>
+      </h4>
+    </div>
+  </div>
+<% end %>

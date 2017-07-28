@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
+  
   def show
-    @user = current_user
+    if current_user.present?
+      @user = current_user
+      @item = Item.new
+      @items = @user.items
+    else
+      redirect_to root_path 
+    end  
   end
+  
 end
