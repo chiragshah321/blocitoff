@@ -1,10 +1,13 @@
 <h2> Current To-Do Items </h2>
 
 <% @items.each do |item| %>
-  <div class="media">
+  <div class="media" id="item-<%= item.id %>">
     <div class="media-body">
       <h4 class="media-heading">
         <%= item.name %>
+        <% if current_user == @user %>
+          : <%= link_to '', [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+        <% end %>
       </h4>
     </div>
   </div>
